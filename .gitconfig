@@ -60,6 +60,15 @@
 	# a.k.a. ‘delete merged’
 	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
+	sq = "! f() { \
+		declare currentBranch=\"$(git symbolic-ref --short HEAD)\"; \
+		git checkout master && \
+		git fetch upstream && \
+		git reset --hard upstream/master && \
+		git push && \
+		git checkout $currentBranch; \
+		}; f"
+
 	# List contributors with number of commits
 	contributors = shortlog --summary --numbered
 
