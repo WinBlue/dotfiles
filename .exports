@@ -37,3 +37,6 @@ export GPG_TTY=$(tty);
 # Go related
 export GOPATH=$HOME/work/go
 export PATH=$PATH:$GOPATH/bin
+export GOPRIVATE=git.soma.salesforce.com
+export GONOPROXY=git.soma.salesforce.com
+export GONOSUMDB=git.soma.salesforce.com
